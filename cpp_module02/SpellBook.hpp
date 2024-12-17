@@ -17,8 +17,8 @@ class SpellBook
 		~SpellBook();
 
 		void learnSpell(ASpell *spell_ptr);
-		void forgetSpell(std::string const spell_name);
-		ASpell *createSpell(std::string const spell_name);
+		void forgetSpell(std::string const &spell_name);
+		ASpell *createSpell(std::string const &spell_name);
 };
 
 #include "ATarget.hpp"

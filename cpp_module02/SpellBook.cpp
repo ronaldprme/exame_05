@@ -1,6 +1,7 @@
 #include "SpellBook.hpp"
 
 SpellBook::SpellBook(){}
+
 SpellBook::~SpellBook(){
 	std::map<std::string, ASpell *>::iterator it = arr_spell.begin();
 	std::map<std::string, ASpell *>::iterator it_end = arr_spell.end();
@@ -16,14 +17,14 @@ void SpellBook::learnSpell(ASpell *spell_ptr){
 		arr_spell.insert(std::pair<std::string, ASpell*>(spell_ptr->getName(), spell_ptr->clone()));
 }
 
-void SpellBook::forgetSpell(std::string const spell_name){
+void SpellBook::forgetSpell(std::string const &spell_name){
 	std::map<std::string, ASpell *>::iterator it = arr_spell.find(spell_name);
 	if (it != arr_spell.end())
 		delete it->second;
 	arr_spell.erase(spell_name);
 }
 
-ASpell *SpellBook::createSpell(std::string const spell_name){
+ASpell *SpellBook::createSpell(std::string const &spell_name){
 	std::map<std::string, ASpell *>::iterator it = arr_spell.find(spell_name);
 	if (it != arr_spell.end())
 		return arr_spell[spell_name];

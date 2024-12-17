@@ -21,3 +21,5 @@ class ATarget
 
 		void getHitBySpell(ASpell const &spell_ref) const;		
 };
+
+#include "ASpell.hpp"

@@ -1,5 +1,5 @@
 #include "ATarget.hpp"
-#include "ASpell.hpp"
+
 
 ATarget::ATarget(){}
 ATarget::ATarget(std::string const &type){ this->type = type;}
